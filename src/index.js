@@ -7,6 +7,7 @@ dotenv.config();
 
 import routerUser from "../src/controllers/user";
 import routerProduct from "../src/controllers/product";
+import routerGastos from "../src/controllers/gastos";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -26,6 +27,7 @@ app.use(
 app.use(bodyParser.json());
 app.use("/auth", routerUser);
 app.use("/product", routerProduct);
+app.use("/gastos", routerGastos);
 
 const server = app.listen(PORT, () => {
   console.log(`App rodando em http://localhost:${PORT}`);
